@@ -31,6 +31,10 @@ const HomePage = () => {
           <td>{shipment.trackingNo}</td>
           <td>{shipment.status}</td>
           <td>{shipment.consignee}</td>
+          <td>
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
         </tr>
         )}
         </tbody>
