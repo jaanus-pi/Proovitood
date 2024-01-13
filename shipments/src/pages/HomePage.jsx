@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [shipments, setShipments] = useState([]);
@@ -23,7 +24,7 @@ const HomePage = () => {
         </tr>
         </thead>
         <tbody>
-        {shipments.map(shipment => 
+        {shipments.map((shipment, index) => 
         <tr key={shipment.orderNo}>
           <td>{shipment.orderNo}</td> 
           <td>{shipment.date}</td>
@@ -32,7 +33,9 @@ const HomePage = () => {
           <td>{shipment.status}</td>
           <td>{shipment.consignee}</td>
           <td>
-            <button>Edit</button>
+            <Link to={'/details/' + index}>
+              <button>Edit</button>
+            </Link>
             <button>Delete</button>
           </td>
         </tr>
