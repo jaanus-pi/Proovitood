@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const ShipmentsDetails = () => {
   const { index } = useParams();
@@ -19,6 +19,9 @@ const ShipmentsDetails = () => {
 
   return (
     <div>
+      <Link to={'/'}>
+        <button>Home</button>
+      </Link>
       {shipments.length !== 0 &&
       <div>
         <label>Order number</label> <br />
