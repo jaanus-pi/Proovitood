@@ -1,14 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [shipments, setShipments] = useState([]);
+  const sessionShipments = JSON.parse(sessionStorage.getItem("shipments")) || [];
 
   useEffect(() => {
+    if (sessionShipments.length !== 0) {
+      setShipments(sessionShipments);
+      return;
+    }
+
     fetch("https://my.api.mockaroo.com/shipments.json?key=5e0b62d0")
       .then(res => res.json())
-      .then(json => setShipments(json));
+      .then(json => {
+        setShipments(json)
+        sessionStorage.setItem("shipments", JSON.stringify(json))
+      })
   }, []);
+
+  const remove = (index) => {
+    shipments.splice(index, 1);
+    setShipments(shipments.slice());
+    sessionStorage.setItem("shipments", JSON.stringify(shipments))
+  }
 
   return (
     <div>
@@ -36,7 +51,7 @@ const HomePage = () => {
             <Link to={'/details/' + index}>
               <button>Edit</button>
             </Link>
-            <button>Delete</button>
+            <button onClick={() => remove(index)}>Delete</button>
           </td>
         </tr>
         )}
