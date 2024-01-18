@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import '../assets/css/ShipmentDetails.css'
 
 const ShipmentDetails = () => {
   const { index } = useParams();
@@ -30,8 +32,8 @@ const ShipmentDetails = () => {
 
   return (
     <div>
-      <button onClick={() => navigate('/')}>Home</button>
-      <div>
+      <div className='content'>
+        <h2>SHIPMENT DETAILS</h2>
         <label>Order number</label> <br />
         <input type="text" defaultValue={foundShipment.orderNo} ref={orderNoRef}/> <br />
         <label>Date</label> <br />
@@ -44,7 +46,8 @@ const ShipmentDetails = () => {
         <input type="text" defaultValue={foundShipment.status} ref={statusRef}/> <br />
         <label>Consignee</label> <br />
         <input type="text" defaultValue={foundShipment.consignee} ref={consigneeRef}/> <br />
-        <button onClick={save}>Save</button>
+        <Button onClick={save} color='primary'>Save</Button>
+        <Button onClick={() => navigate('/')} color='info'>Back to shipments</Button>
       </div>
     </div>
   )

@@ -1,0 +1,17 @@
+.content {
+  margin: 25px;
+}
+
+.content input {
+  min-width: 30%;
+  background-color: rgb(240, 240, 240);
+  border: 8px solid rgb(240, 240, 240);
+  border-radius: 3px;
+  height: 30px;
+}
+
+.content label {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}

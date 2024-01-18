@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import '../assets/css/HomePage.css'
 
 const HomePage = () => {
   const [shipments, setShipments] = useState([]);
@@ -27,7 +29,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <table>
+      <table className='content-table'>
         <thead>
         <tr>
           <th>Order number</th>
@@ -36,6 +38,7 @@ const HomePage = () => {
           <th>Tracking number</th>
           <th>Status</th>
           <th>Consignee</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -49,9 +52,9 @@ const HomePage = () => {
           <td>{shipment.consignee}</td>
           <td>
             <Link to={'/details/' + index}>
-              <button>Edit</button>
+              <Button color='info'>Edit</Button>
             </Link>
-            <button onClick={() => remove(index)}>Delete</button>
+            <Button onClick={() => remove(index)} color='danger'>X</Button>
           </td>
         </tr>
         )}
