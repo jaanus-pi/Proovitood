@@ -13,11 +13,9 @@ import java.util.List;
 
 @RestController
 public class ContactController {
-    // fail, kuhu teeb front-end paringuid
-    // tuleb paring, kaivitatakse funktsioon
 
     @Autowired
-    private ContactRepository contactRepository; // muutuja kaudu saan funke teha
+    private ContactRepository contactRepository;
 
     @Autowired
     private ContactService contactService;
@@ -26,21 +24,6 @@ public class ContactController {
     public List<ContactDTO> getContacts() {
         return contactService.transformContactToDTO(contactRepository.findAll());
     }
-
-    // localhost:8080/add-contact?name=Jaanus&codeName=Qwerty&phone=58555533
-//    @GetMapping("add-contact")
-//    public List<Contact> addContact(
-//            @RequestParam String name,
-//            @RequestParam String codeName,
-//            @RequestParam String phone
-//    ) {
-//        Contact contact = new Contact();
-//        contact.setName(name);
-//        contact.setCodeName(codeName);
-//        contact.setPhone(phone);
-//        contactRepository.save(contact);
-//        return contactRepository.findAll();
-//    }
 
     @PostMapping("contact")
     public List<ContactDTO> addContact(@RequestBody Contact contact) {
