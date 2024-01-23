@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import '../styles/Artikkel.css'
 
 const Artikkel = () => {
   const [article, setArticle] = useState([]);
@@ -10,12 +11,12 @@ const Artikkel = () => {
   }, []);
 
   return (
-    <div>
-      <h2>{article.title}</h2> <br />
-      <b>{article.intro}</b> <br />
+    <div className='page'>
+      <h1>{article.title}</h1>
+      <div className='intro' dangerouslySetInnerHTML={{__html: article.intro}}/>
       {/* <img src={article.image.medium} alt={article.image.alt} /> */}
       <img src="https://midaiganes.irw.ee/api/imgs/large/a3dac073.jpg" alt='' width="854" height="480"/> <br />
-      {article.body}
+      <div dangerouslySetInnerHTML={{__html: article.body}}/>
     </div>
   )
 }

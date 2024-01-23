@@ -1,4 +1,9 @@
 .App {
   text-align: center;
-  margin-left: 25%;
+  margin-left: 15%;
+}
+
+.page {
+  padding: 80px;
+  background-color: beige;
 }
