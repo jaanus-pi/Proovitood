@@ -64,3 +64,39 @@ const Tabel = () => {
 }
 
 export default Tabel
+
+// {/* <tr className={`table-row collapse ${index === selectedIndex ? 'show' : ''}`}>
+//                 <td className='expanded-data' colSpan='2'>
+//                   <img className='personal-image' src={person.image.large} alt={person.image.alt} colSpan='3' />
+//                 </td>
+//                 <td className='expanded-text' colSpan='3'>
+//                   <p dangerouslySetInnerHTML={{ __html: person.body }} />
+// <button as={Link} to={'/article/' + person.id} onClick={() => gotoArticle(person.id)}>loe rohkem</button>
+//                 </td>
+//               </tr> */}
+//               const [selectedIndex, setSelectedIndex] = useState(null);
+// const toggleRow = (index) => {
+//     setSelectedIndex(selectedIndex === index ? null : index);
+//   }
+// {/* <tbody>
+//           {displayedData.map((person, index) => (
+//             <React.Fragment key={index}>
+//               <tr className={`table-row ${index === selectedIndex ? 'selected' : ''}`} onClick={() => toggleRow(index)}>
+//                 <td className='tighter-text'>{person.firstname}</td>
+//                 <td className='tighter-text'>{person.surname}</td>
+//                 <td className='tighter-text'>{convertSexToEstonian(person.sex)}</td>
+//                 <td className='tighter-text'>{convertUnixTimestampToDate(person.date)}</td>
+//                 <td className='tighter-text'>{person.phone}</td>
+//               </tr>
+//               <tr className={`table-row collapse ${index === selectedIndex ? 'show' : ''}`}>
+//                 <td className='expanded-data' colSpan='2'>
+//                   <img className='personal-image' src={person.image.large} alt={person.image.alt} colSpan='3' />
+//                 </td>
+//                 <td className='expanded-text' colSpan='3'>
+//                   <p dangerouslySetInnerHTML={{ __html: person.body }} />
+//                   <button as={Link} to={'/article/' + person.id} onClick={() => gotoArticle(person.id)}>loe rohkem</button>
+//                 </td>
+//               </tr>
+//             </React.Fragment>
+//           ))}
+//         </tbody> */}
